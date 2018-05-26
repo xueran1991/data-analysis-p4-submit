@@ -11794,7 +11794,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[208]:</div>
+<div class="prompt input_prompt">In&nbsp;[1]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
@@ -11823,7 +11823,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[211]:</div>
+<div class="prompt input_prompt">In&nbsp;[2]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;ab_data.csv&#39;</span><span class="p">)</span>
@@ -11840,7 +11840,7 @@ div#notebook {
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[211]:</div>
+<div class="prompt output_prompt">Out[2]:</div>
 
 
 
@@ -11909,7 +11909,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[212]:</div>
+<div class="prompt input_prompt">In&nbsp;[3]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
@@ -11925,7 +11925,7 @@ div#notebook {
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[212]:</div>
+<div class="prompt output_prompt">Out[3]:</div>
 
 
 
@@ -11951,7 +11951,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[213]:</div>
+<div class="prompt input_prompt">In&nbsp;[4]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">user_id</span><span class="o">.</span><span class="n">nunique</span><span class="p">()</span>
@@ -11967,7 +11967,7 @@ div#notebook {
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[213]:</div>
+<div class="prompt output_prompt">Out[4]:</div>
 
 
 
@@ -11993,7 +11993,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[214]:</div>
+<div class="prompt input_prompt">In&nbsp;[5]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;converted&#39;</span><span class="p">]</span><span class="o">==</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">user_id</span><span class="o">.</span><span class="n">nunique</span><span class="p">()</span><span class="o">/</span><span class="n">df</span><span class="o">.</span><span class="n">user_id</span><span class="o">.</span><span class="n">nunique</span><span class="p">()</span>
@@ -12009,7 +12009,7 @@ div#notebook {
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[214]:</div>
+<div class="prompt output_prompt">Out[5]:</div>
 
 
 
@@ -12035,7 +12035,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[215]:</div>
+<div class="prompt input_prompt">In&nbsp;[6]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s1">&#39;(landing_page==&quot;new_page&quot; &amp; group != &quot;treatment&quot;) | </span><span class="se">\</span>
@@ -12052,7 +12052,43 @@ div#notebook {
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[215]:</div>
+<div class="prompt output_prompt">Out[6]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>3893</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[7]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">new_page</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">landing_page</span> <span class="o">==</span> <span class="s1">&#39;new_page&#39;</span>
+<span class="n">treatment</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">group</span> <span class="o">==</span> <span class="s1">&#39;treatment&#39;</span>
+<span class="n">dismatch</span> <span class="o">=</span> <span class="n">new_page</span> <span class="o">!=</span> <span class="n">treatment</span>
+<span class="n">dismatch</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[7]:</div>
 
 
 
@@ -12078,7 +12114,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[219]:</div>
+<div class="prompt input_prompt">In&nbsp;[8]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">isnull</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
@@ -12094,7 +12130,7 @@ div#notebook {
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[219]:</div>
+<div class="prompt output_prompt">Out[8]:</div>
 
 
 
@@ -12135,11 +12171,10 @@ dtype: int64</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[220]:</div>
+<div class="prompt input_prompt">In&nbsp;[9]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df2</span> <span class="o">=</span> <span class="n">df</span><span class="p">[((</span><span class="n">df</span><span class="o">.</span><span class="n">landing_page</span><span class="o">==</span><span class="s1">&#39;new_page&#39;</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">group</span><span class="o">==</span><span class="s1">&#39;treatment&#39;</span><span class="p">))</span> <span class="o">|</span> <span class="p">((</span><span class="n">df</span><span class="o">.</span><span class="n">landing_page</span><span class="o">==</span><span class="s1">&#39;old_page&#39;</span><span class="p">)</span> \
-                                        <span class="o">&amp;</span> <span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">group</span><span class="o">==</span><span class="s1">&#39;control&#39;</span><span class="p">))]</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df2</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="o">~</span><span class="n">dismatch</span><span class="p">]</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
 </pre></div>
 
 </div>
@@ -12149,7 +12184,7 @@ dtype: int64</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[221]:</div>
+<div class="prompt input_prompt">In&nbsp;[10]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Double Check all of the correct rows were removed - this should be 0</span>
@@ -12166,7 +12201,7 @@ dtype: int64</pre>
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[221]:</div>
+<div class="prompt output_prompt">Out[10]:</div>
 
 
 
@@ -12193,7 +12228,7 @@ dtype: int64</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[222]:</div>
+<div class="prompt input_prompt">In&nbsp;[11]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">df2</span><span class="o">.</span><span class="n">user_id</span><span class="o">.</span><span class="n">nunique</span><span class="p">()</span>
@@ -12209,7 +12244,7 @@ dtype: int64</pre>
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[222]:</div>
+<div class="prompt output_prompt">Out[11]:</div>
 
 
 
@@ -12235,7 +12270,7 @@ dtype: int64</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[223]:</div>
+<div class="prompt input_prompt">In&nbsp;[12]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">df2</span><span class="o">.</span><span class="n">user_id</span><span class="p">[</span><span class="n">df2</span><span class="o">.</span><span class="n">user_id</span><span class="o">.</span><span class="n">duplicated</span><span class="p">()</span><span class="o">==</span><span class="kc">True</span><span class="p">]</span>
@@ -12251,7 +12286,7 @@ dtype: int64</pre>
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[223]:</div>
+<div class="prompt output_prompt">Out[12]:</div>
 
 
 
@@ -12287,7 +12322,7 @@ Name: user_id, dtype: int64</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[224]:</div>
+<div class="prompt input_prompt">In&nbsp;[13]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">df2</span><span class="p">[</span><span class="n">df2</span><span class="o">.</span><span class="n">user_id</span><span class="o">==</span><span class="mi">773192</span><span class="p">]</span>
@@ -12303,7 +12338,7 @@ Name: user_id, dtype: int64</pre>
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[224]:</div>
+<div class="prompt output_prompt">Out[13]:</div>
 
 
 
@@ -12372,7 +12407,7 @@ Name: user_id, dtype: int64</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[225]:</div>
+<div class="prompt input_prompt">In&nbsp;[14]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">df2</span> <span class="o">=</span> <span class="n">df2</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="mi">1899</span><span class="p">)</span>
@@ -12395,7 +12430,7 @@ Name: user_id, dtype: int64</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[226]:</div>
+<div class="prompt input_prompt">In&nbsp;[15]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">ctr_all</span> <span class="o">=</span> <span class="n">df2</span><span class="p">[</span><span class="n">df2</span><span class="p">[</span><span class="s1">&#39;converted&#39;</span><span class="p">]</span><span class="o">==</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">user_id</span><span class="o">.</span><span class="n">nunique</span><span class="p">()</span><span class="o">/</span><span class="n">df2</span><span class="o">.</span><span class="n">user_id</span><span class="o">.</span><span class="n">nunique</span><span class="p">()</span>
@@ -12412,7 +12447,7 @@ Name: user_id, dtype: int64</pre>
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[226]:</div>
+<div class="prompt output_prompt">Out[15]:</div>
 
 
 
@@ -12438,7 +12473,7 @@ Name: user_id, dtype: int64</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[227]:</div>
+<div class="prompt input_prompt">In&nbsp;[16]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">ctr_control</span> <span class="o">=</span> <span class="n">df2</span><span class="p">[(</span><span class="n">df2</span><span class="o">.</span><span class="n">converted</span><span class="o">==</span><span class="mi">1</span><span class="p">)</span><span class="o">&amp;</span><span class="p">(</span><span class="n">df2</span><span class="o">.</span><span class="n">group</span><span class="o">==</span><span class="s2">&quot;control&quot;</span><span class="p">)]</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">/</span><span class="n">df2</span><span class="p">[</span><span class="n">df2</span><span class="o">.</span><span class="n">group</span><span class="o">==</span><span class="s2">&quot;control&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
@@ -12455,7 +12490,7 @@ Name: user_id, dtype: int64</pre>
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[227]:</div>
+<div class="prompt output_prompt">Out[16]:</div>
 
 
 
@@ -12481,7 +12516,7 @@ Name: user_id, dtype: int64</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[228]:</div>
+<div class="prompt input_prompt">In&nbsp;[17]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">ctr_treatment</span> <span class="o">=</span> <span class="n">df2</span><span class="p">[(</span><span class="n">df2</span><span class="o">.</span><span class="n">converted</span><span class="o">==</span><span class="mi">1</span><span class="p">)</span><span class="o">&amp;</span><span class="p">(</span><span class="n">df2</span><span class="o">.</span><span class="n">group</span><span class="o">==</span><span class="s2">&quot;treatment&quot;</span><span class="p">)]</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">/</span><span class="n">df2</span><span class="p">[</span><span class="n">df2</span><span class="o">.</span><span class="n">group</span><span class="o">==</span><span class="s2">&quot;treatment&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
@@ -12498,7 +12533,7 @@ Name: user_id, dtype: int64</pre>
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[228]:</div>
+<div class="prompt output_prompt">Out[17]:</div>
 
 
 
@@ -12515,7 +12550,7 @@ Name: user_id, dtype: int64</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[229]:</div>
+<div class="prompt input_prompt">In&nbsp;[18]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># control组合treatment组中转化率的差值</span>
@@ -12533,7 +12568,7 @@ Name: user_id, dtype: int64</pre>
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[229]:</div>
+<div class="prompt output_prompt">Out[18]:</div>
 
 
 
@@ -12559,7 +12594,7 @@ Name: user_id, dtype: int64</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[230]:</div>
+<div class="prompt input_prompt">In&nbsp;[19]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#d.</span>
@@ -12576,7 +12611,7 @@ Name: user_id, dtype: int64</pre>
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[230]:</div>
+<div class="prompt output_prompt">Out[19]:</div>
 
 
 
@@ -12597,7 +12632,7 @@ Name: user_id, dtype: int64</pre>
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>e. 使用这个问题的前两部分的结果，给出你的建议：你是否认为有证据表明一个页面可以带来更多的转化？在下面写出你的答案。</p>
 <p><strong>在这里写出你的答案。</strong> <br>
-在control组里面的用户转化率比在treatment组中的转化率高约0.15%,因此control组可以带来更多的转化。</p>
+在control组里面的用户转化率比在treatment组中的转化率高约0.15%,但这个比例差异非常小，在进行进一步的统计检验之前，不能表明一个页面的转化率优于另一个页面。</p>
 
 </div>
 </div>
@@ -12649,7 +12684,7 @@ a. 在零假设中，$p_{new}$ 的 <strong>convert rate（转化率）</strong> 
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[231]:</div>
+<div class="prompt input_prompt">In&nbsp;[20]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">ctr_all</span>
@@ -12665,7 +12700,7 @@ a. 在零假设中，$p_{new}$ 的 <strong>convert rate（转化率）</strong> 
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[231]:</div>
+<div class="prompt output_prompt">Out[20]:</div>
 
 
 
@@ -12691,7 +12726,7 @@ a. 在零假设中，$p_{new}$ 的 <strong>convert rate（转化率）</strong> 
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[232]:</div>
+<div class="prompt input_prompt">In&nbsp;[21]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">ctr_all</span>
@@ -12707,7 +12742,7 @@ a. 在零假设中，$p_{new}$ 的 <strong>convert rate（转化率）</strong> 
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[232]:</div>
+<div class="prompt output_prompt">Out[21]:</div>
 
 
 
@@ -12733,7 +12768,7 @@ a. 在零假设中，$p_{new}$ 的 <strong>convert rate（转化率）</strong> 
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[233]:</div>
+<div class="prompt input_prompt">In&nbsp;[24]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">n_new</span> <span class="o">=</span> <span class="n">df2</span><span class="p">[</span><span class="n">df2</span><span class="o">.</span><span class="n">group</span><span class="o">==</span><span class="s1">&#39;treatment&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">user_id</span><span class="o">.</span><span class="n">nunique</span><span class="p">()</span>
@@ -12750,7 +12785,7 @@ a. 在零假设中，$p_{new}$ 的 <strong>convert rate（转化率）</strong> 
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[233]:</div>
+<div class="prompt output_prompt">Out[24]:</div>
 
 
 
@@ -12776,7 +12811,7 @@ a. 在零假设中，$p_{new}$ 的 <strong>convert rate（转化率）</strong> 
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[234]:</div>
+<div class="prompt input_prompt">In&nbsp;[25]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">n_old</span> <span class="o">=</span> <span class="n">df2</span><span class="p">[</span><span class="n">df2</span><span class="o">.</span><span class="n">group</span><span class="o">==</span><span class="s1">&#39;control&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">user_id</span><span class="o">.</span><span class="n">nunique</span><span class="p">()</span>
@@ -12793,7 +12828,7 @@ a. 在零假设中，$p_{new}$ 的 <strong>convert rate（转化率）</strong> 
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[234]:</div>
+<div class="prompt output_prompt">Out[25]:</div>
 
 
 
@@ -12819,7 +12854,7 @@ a. 在零假设中，$p_{new}$ 的 <strong>convert rate（转化率）</strong> 
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[235]:</div>
+<div class="prompt input_prompt">In&nbsp;[26]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">new_page_converted</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="n">n_new</span><span class="p">,</span><span class="n">p</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="o">-</span><span class="n">ctr_all</span><span class="p">,</span><span class="n">ctr_all</span><span class="p">])</span>
@@ -12841,7 +12876,7 @@ a. 在零假设中，$p_{new}$ 的 <strong>convert rate（转化率）</strong> 
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[236]:</div>
+<div class="prompt input_prompt">In&nbsp;[27]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">old_page_converted</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="n">n_old</span><span class="p">,</span><span class="n">p</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="o">-</span><span class="n">ctr_all</span><span class="p">,</span><span class="n">ctr_all</span><span class="p">])</span>
@@ -12863,7 +12898,7 @@ a. 在零假设中，$p_{new}$ 的 <strong>convert rate（转化率）</strong> 
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[237]:</div>
+<div class="prompt input_prompt">In&nbsp;[28]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">new_page_converted</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span><span class="o">-</span><span class="n">old_page_converted</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
@@ -12879,13 +12914,13 @@ a. 在零假设中，$p_{new}$ 的 <strong>convert rate（转化率）</strong> 
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[237]:</div>
+<div class="prompt output_prompt">Out[28]:</div>
 
 
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>0.0008654004462827491</pre>
+<pre>-0.001309833628114293</pre>
 </div>
 
 </div>
@@ -12905,7 +12940,7 @@ a. 在零假设中，$p_{new}$ 的 <strong>convert rate（转化率）</strong> 
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[238]:</div>
+<div class="prompt input_prompt">In&nbsp;[29]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">p_diffs</span> <span class="o">=</span> <span class="p">[]</span>
@@ -12931,7 +12966,7 @@ a. 在零假设中，$p_{new}$ 的 <strong>convert rate（转化率）</strong> 
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[239]:</div>
+<div class="prompt input_prompt">In&nbsp;[30]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">p_diffs</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">p_diffs</span><span class="p">)</span>
@@ -12949,13 +12984,13 @@ a. 在零假设中，$p_{new}$ 的 <strong>convert rate（转化率）</strong> 
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[239]:</div>
+<div class="prompt output_prompt">Out[30]:</div>
 
 
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>&lt;matplotlib.lines.Line2D at 0x3cebfcf8&gt;</pre>
+<pre>&lt;matplotlib.lines.Line2D at 0x8c053c8&gt;</pre>
 </div>
 
 </div>
@@ -12968,7 +13003,7 @@ a. 在零假设中，$p_{new}$ 的 <strong>convert rate（转化率）</strong> 
 
 
 <div class="output_png output_subarea ">
-<img src="data:image/png;base64,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
+<img src="data:image/png;base64,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
 "
 >
 </div>
@@ -12990,10 +13025,10 @@ a. 在零假设中，$p_{new}$ 的 <strong>convert rate（转化率）</strong> 
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[240]:</div>
+<div class="prompt input_prompt">In&nbsp;[31]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="p">(</span><span class="n">p_diffs</span><span class="o">&lt;</span><span class="n">ctr_diff</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span><span class="o">+</span><span class="p">(</span><span class="n">p_diffs</span><span class="o">&gt;</span><span class="p">(</span><span class="mi">0</span><span class="o">-</span><span class="n">ctr_diff</span><span class="p">))</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="p">(</span><span class="n">p_diffs</span><span class="o">&gt;</span><span class="n">ctr_diff</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
 </pre></div>
 
 </div>
@@ -13006,13 +13041,13 @@ a. 在零假设中，$p_{new}$ 的 <strong>convert rate（转化率）</strong> 
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[240]:</div>
+<div class="prompt output_prompt">Out[31]:</div>
 
 
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>0.187</pre>
+<pre>0.9096</pre>
 </div>
 
 </div>
@@ -13035,7 +13070,7 @@ a. 在零假设中，$p_{new}$ 的 <strong>convert rate（转化率）</strong> 
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>这个值是p值。p值较大，因此不拒绝零假设，也就是两种页面的用户转化率相同。</p>
+<p>这个值是在$p_{new}$ - $p_{old}$ &lt;= 0为零假设，$p_{new}$ - $p_{old}$ &gt; 0为备择假设的假设检验的p值。p值较大，因此不拒绝零假设，也就是两种页面的用户转化率相同。</p>
 
 </div>
 </div>
@@ -13051,7 +13086,7 @@ a. 在零假设中，$p_{new}$ 的 <strong>convert rate（转化率）</strong> 
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[241]:</div>
+<div class="prompt input_prompt">In&nbsp;[32]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">statsmodels.api</span> <span class="k">as</span> <span class="nn">sm</span>
@@ -13078,10 +13113,10 @@ a. 在零假设中，$p_{new}$ 的 <strong>convert rate（转化率）</strong> 
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[242]:</div>
+<div class="prompt input_prompt">In&nbsp;[33]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">z</span><span class="p">,</span><span class="n">p</span> <span class="o">=</span> <span class="n">sm</span><span class="o">.</span><span class="n">stats</span><span class="o">.</span><span class="n">proportions_ztest</span><span class="p">([</span><span class="n">convert_old</span><span class="p">,</span> <span class="n">convert_new</span><span class="p">],[</span><span class="n">n_old</span><span class="p">,</span> <span class="n">n_new</span><span class="p">])</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">z</span><span class="p">,</span><span class="n">p</span> <span class="o">=</span> <span class="n">sm</span><span class="o">.</span><span class="n">stats</span><span class="o">.</span><span class="n">proportions_ztest</span><span class="p">([</span><span class="n">convert_new</span><span class="p">,</span> <span class="n">convert_old</span><span class="p">],[</span><span class="n">n_new</span><span class="p">,</span> <span class="n">n_old</span><span class="p">],</span><span class="n">alternative</span><span class="o">=</span><span class="s1">&#39;larger&#39;</span><span class="p">)</span>
 <span class="n">z</span><span class="p">,</span><span class="n">p</span>
 </pre></div>
 
@@ -13095,13 +13130,47 @@ a. 在零假设中，$p_{new}$ 的 <strong>convert rate（转化率）</strong> 
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[242]:</div>
+<div class="prompt output_prompt">Out[33]:</div>
 
 
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>(1.3109241984234394, 0.18988337448195103)</pre>
+<pre>(-1.3109241984234394, 0.9050583127590245)</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[34]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">scipy.stats</span> <span class="k">import</span> <span class="n">norm</span>
+<span class="n">norm</span><span class="o">.</span><span class="n">ppf</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="p">(</span><span class="mf">0.05</span><span class="p">))</span> <span class="c1">#Tells us what our critical value at 95% confidence is</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[34]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>1.6448536269514722</pre>
 </div>
 
 </div>
@@ -13117,7 +13186,8 @@ a. 在零假设中，$p_{new}$ 的 <strong>convert rate（转化率）</strong> 
 <p>n. 在上一个问题中计算出的z-分和p-值是否意味着新旧页面的转化率？它们与 <strong>j.</strong> 与 <strong>k.</strong> 中的结果一致吗？
  What do the z-score and p-value you computed in the previous question mean for the conversion rates of the old and new pages?  Do they agree with the findings in parts <strong>j.</strong> and <strong>k.</strong>? <br>
 <strong>在这里给出你的答案。</strong> <br>
-z值大于1.96或z值小于-1.96可以认为数据具有显著性差异，拒绝零假设。与j、k中的p值近似相等，同样是认为不拒绝零假设。</p>
+在本假设检验中，z值大于1.64或z值小于-1.64可以认为数据具有显著性差异，而此处的z值是-1.31，因此依据z值不拒绝零假设。 <br>
+与j、k中的p值近似相等，同样是认为不拒绝零假设。</p>
 
 </div>
 </div>
@@ -13145,7 +13215,7 @@ z值大于1.96或z值小于-1.96可以认为数据具有显著性差异，拒绝
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[243]:</div>
+<div class="prompt input_prompt">In&nbsp;[35]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">statsmodels.api</span> <span class="k">as</span> <span class="nn">sm</span>
@@ -13158,7 +13228,7 @@ z值大于1.96或z值小于-1.96可以认为数据具有显著性差异，拒绝
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[246]:</div>
+<div class="prompt input_prompt">In&nbsp;[36]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">df2</span><span class="p">[</span><span class="s1">&#39;intercept&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
@@ -13177,7 +13247,7 @@ z值大于1.96或z值小于-1.96可以认为数据具有显著性差异，拒绝
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[246]:</div>
+<div class="prompt output_prompt">Out[36]:</div>
 
 
 
@@ -13252,7 +13322,7 @@ z值大于1.96或z值小于-1.96可以认为数据具有显著性差异，拒绝
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[247]:</div>
+<div class="prompt input_prompt">In&nbsp;[37]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">logit_mod</span> <span class="o">=</span> <span class="n">sm</span><span class="o">.</span><span class="n">Logit</span><span class="p">(</span><span class="n">df2</span><span class="o">.</span><span class="n">converted</span><span class="p">,</span><span class="n">df2</span><span class="p">[[</span><span class="s1">&#39;intercept&#39;</span><span class="p">,</span><span class="s1">&#39;ab_page&#39;</span><span class="p">]])</span>
@@ -13295,7 +13365,7 @@ z值大于1.96或z值小于-1.96可以认为数据具有显著性差异，拒绝
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[248]:</div>
+<div class="prompt input_prompt">In&nbsp;[38]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">r</span><span class="o">.</span><span class="n">summary</span><span class="p">()</span>
@@ -13311,7 +13381,7 @@ z值大于1.96或z值小于-1.96可以认为数据具有显著性差异，拒绝
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[248]:</div>
+<div class="prompt output_prompt">Out[38]:</div>
 
 
 
@@ -13328,10 +13398,10 @@ z值大于1.96或z值小于-1.96可以认为数据具有显著性差异，拒绝
   <th>Method:</th>               <td>MLE</td>       <th>  Df Model:          </th>   <td>     1</td>   
 </tr>
 <tr>
-  <th>Date:</th>          <td>Thu, 24 May 2018</td> <th>  Pseudo R-squ.:     </th>  <td>8.077e-06</td> 
+  <th>Date:</th>          <td>Sat, 26 May 2018</td> <th>  Pseudo R-squ.:     </th>  <td>8.077e-06</td> 
 </tr>
 <tr>
-  <th>Time:</th>              <td>23:11:29</td>     <th>  Log-Likelihood:    </th> <td>-1.0639e+05</td>
+  <th>Time:</th>              <td>10:18:27</td>     <th>  Log-Likelihood:    </th> <td>-1.0639e+05</td>
 </tr>
 <tr>
   <th>converged:</th>           <td>True</td>       <th>  LL-Null:           </th> <td>-1.0639e+05</td>
@@ -13364,9 +13434,10 @@ z值大于1.96或z值小于-1.96可以认为数据具有显著性差异，拒绝
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>e. 与 <strong>ab_page</strong> 关联的 p-值是多少？ 为什么它与你在 <strong>II</strong> 中发现的结果不同？<br><br>  <strong>提示</strong>: 与你的回归模型相关的零假设与备择假设分别是什么？它们如何与 <strong>Part II</strong> 中的零假设和备择假设做比较？</p>
-<p><strong>在这里给出你的答案。</strong> <br></p>
-<h4>与ab_page关联的p-值是0.19,和在 <strong>II</strong> 中发现的结果相同. <br></h4>
-<p>在回归模型中与ab_page相关的零假设是ab_page对转换率的影响为零，备择假设是ab_page的对转化率的影响不为零。和在<strong>II</strong>部分中的零假设和备择假设是相同的意思。</p>
+<p><strong>在这里给出你的答案。</strong> <br>
+与ab_page关联的p-值是0.19,和在 <strong>II</strong> 中发现的结果不同. <br>
+在回归模型中与ab_page相关的零假设是ab_page对转换率的影响为零，备择假设是ab<em>page的对转化率的影响不为零，是双边检验。
+在<strong>II</strong>部分中$p</em>{new}$ - $p<em>{old}$ &lt;= 0为零假设，$p</em>{new}$ - $p_{old}$ &gt; 0为备择假设，是单边检验。</p>
 
 </div>
 </div>
@@ -13395,10 +13466,11 @@ z值大于1.96或z值小于-1.96可以认为数据具有显著性差异，拒绝
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[249]:</div>
+<div class="prompt input_prompt">In&nbsp;[39]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">countries</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;countries.csv&#39;</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># country和df2合并</span>
+<span class="n">countries</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;countries.csv&#39;</span><span class="p">)</span>
 <span class="n">df3</span> <span class="o">=</span> <span class="n">df2</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s1">&#39;user_id&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">countries</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s1">&#39;user_id&#39;</span><span class="p">))</span>
 <span class="n">df3</span><span class="o">.</span><span class="n">country</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span>
 </pre></div>
@@ -13413,7 +13485,7 @@ z值大于1.96或z值小于-1.96可以认为数据具有显著性差异，拒绝
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[249]:</div>
+<div class="prompt output_prompt">Out[39]:</div>
 
 
 
@@ -13430,10 +13502,26 @@ z值大于1.96或z值小于-1.96可以认为数据具有显著性差异，拒绝
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[250]:</div>
+<div class="prompt input_prompt">In&nbsp;[40]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df3</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;ab_page&#39;</span><span class="p">,</span><span class="s1">&#39;country&#39;</span><span class="p">])[</span><span class="s1">&#39;converted&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># 添加国家类比的虚拟变量</span>
+<span class="n">df3</span><span class="p">[[</span><span class="s1">&#39;CA&#39;</span><span class="p">,</span><span class="s1">&#39;UK&#39;</span><span class="p">,</span><span class="s1">&#39;US&#39;</span><span class="p">]]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">get_dummies</span><span class="p">(</span><span class="n">df3</span><span class="o">.</span><span class="n">country</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[44]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">logit_mod</span> <span class="o">=</span> <span class="n">sm</span><span class="o">.</span><span class="n">Logit</span><span class="p">(</span><span class="n">df3</span><span class="o">.</span><span class="n">converted</span><span class="p">,</span><span class="n">df3</span><span class="p">[[</span><span class="s1">&#39;intercept&#39;</span><span class="p">,</span><span class="s1">&#39;ab_page&#39;</span><span class="p">,</span><span class="s1">&#39;CA&#39;</span><span class="p">,</span><span class="s1">&#39;UK&#39;</span><span class="p">]])</span>
+<span class="n">result</span> <span class="o">=</span> <span class="n">logit_mod</span><span class="o">.</span><span class="n">fit</span><span class="p">()</span>
+<span class="n">result</span><span class="o">.</span><span class="n">summary</span><span class="p">()</span>
 </pre></div>
 
 </div>
@@ -13446,20 +13534,65 @@ z值大于1.96或z值小于-1.96可以认为数据具有显著性差异，拒绝
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[250]:</div>
+<div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Optimization terminated successfully.
+         Current function value: 0.366113
+         Iterations 6
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[44]:</div>
 
 
 
-
-<div class="output_text output_subarea output_execute_result">
-<pre>ab_page  country
-0        CA         0.118783
-         UK         0.120022
-         US         0.120630
-1        CA         0.111902
-         UK         0.121171
-         US         0.118466
-Name: converted, dtype: float64</pre>
+<div class="output_html rendered_html output_subarea output_execute_result">
+<table class="simpletable">
+<caption>Logit Regression Results</caption>
+<tr>
+  <th>Dep. Variable:</th>     <td>converted</td>    <th>  No. Observations:  </th>   <td>290584</td>   
+</tr>
+<tr>
+  <th>Model:</th>               <td>Logit</td>      <th>  Df Residuals:      </th>   <td>290580</td>   
+</tr>
+<tr>
+  <th>Method:</th>               <td>MLE</td>       <th>  Df Model:          </th>   <td>     3</td>   
+</tr>
+<tr>
+  <th>Date:</th>          <td>Sat, 26 May 2018</td> <th>  Pseudo R-squ.:     </th>  <td>2.323e-05</td> 
+</tr>
+<tr>
+  <th>Time:</th>              <td>10:21:13</td>     <th>  Log-Likelihood:    </th> <td>-1.0639e+05</td>
+</tr>
+<tr>
+  <th>converged:</th>           <td>True</td>       <th>  LL-Null:           </th> <td>-1.0639e+05</td>
+</tr>
+<tr>
+  <th> </th>                      <td> </td>        <th>  LLR p-value:       </th>   <td>0.1760</td>   
+</tr>
+</table>
+<table class="simpletable">
+<tr>
+      <td></td>         <th>coef</th>     <th>std err</th>      <th>z</th>      <th>P>|z|</th>  <th>[0.025</th>    <th>0.975]</th>  
+</tr>
+<tr>
+  <th>intercept</th> <td>   -1.9893</td> <td>    0.009</td> <td> -223.763</td> <td> 0.000</td> <td>   -2.007</td> <td>   -1.972</td>
+</tr>
+<tr>
+  <th>ab_page</th>   <td>   -0.0149</td> <td>    0.011</td> <td>   -1.307</td> <td> 0.191</td> <td>   -0.037</td> <td>    0.007</td>
+</tr>
+<tr>
+  <th>CA</th>        <td>   -0.0408</td> <td>    0.027</td> <td>   -1.516</td> <td> 0.130</td> <td>   -0.093</td> <td>    0.012</td>
+</tr>
+<tr>
+  <th>UK</th>        <td>    0.0099</td> <td>    0.013</td> <td>    0.743</td> <td> 0.457</td> <td>   -0.016</td> <td>    0.036</td>
+</tr>
+</table>
 </div>
 
 </div>
@@ -13467,14 +13600,36 @@ Name: converted, dtype: float64</pre>
 </div>
 </div>
 
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>根据最新的逻辑回归模型结果，与国家相关的p值都较大，因此国家类别对转化率没有影响。</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>h. 虽然你现在已经查看了国家与页面在转化率上的个体性因素，但现在我们要查看页面与国家/地区之间的相互作用，测试其是否会对转化产生重大影响。创建必要的附加列，并拟合一个新的模型。</p>
+<p>提供你的摘要结果，以及根据结果得出的结论。</p>
+<p><strong>提示：页面与国家/地区的相互作用</strong></p>
+
+<pre><code>df3['new_CA'] = df3['new_page'] * df3['CA']
+df3['new_UK'] = df3['new_page'] * df3['UK']</code></pre>
+
+</div>
+</div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[252]:</div>
+<div class="prompt input_prompt">In&nbsp;[45]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df3</span><span class="p">[[</span><span class="s1">&#39;CA&#39;</span><span class="p">,</span><span class="s1">&#39;UK&#39;</span><span class="p">,</span><span class="s1">&#39;US&#39;</span><span class="p">]]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">get_dummies</span><span class="p">(</span><span class="n">df3</span><span class="o">.</span><span class="n">country</span><span class="p">)</span>
-<span class="n">df3</span><span class="p">[</span><span class="s1">&#39;new_CA&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df3</span><span class="p">[</span><span class="s1">&#39;ab_page&#39;</span><span class="p">]</span> <span class="o">*</span> <span class="n">df3</span><span class="p">[</span><span class="s1">&#39;CA&#39;</span><span class="p">]</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df3</span><span class="p">[</span><span class="s1">&#39;new_CA&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df3</span><span class="p">[</span><span class="s1">&#39;ab_page&#39;</span><span class="p">]</span> <span class="o">*</span> <span class="n">df3</span><span class="p">[</span><span class="s1">&#39;CA&#39;</span><span class="p">]</span>
 <span class="n">df3</span><span class="p">[</span><span class="s1">&#39;new_UK&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df3</span><span class="p">[</span><span class="s1">&#39;ab_page&#39;</span><span class="p">]</span> <span class="o">*</span> <span class="n">df3</span><span class="p">[</span><span class="s1">&#39;UK&#39;</span><span class="p">]</span>
 <span class="n">df3</span><span class="p">[</span><span class="s1">&#39;new_US&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df3</span><span class="p">[</span><span class="s1">&#39;ab_page&#39;</span><span class="p">]</span> <span class="o">*</span> <span class="n">df3</span><span class="p">[</span><span class="s1">&#39;US&#39;</span><span class="p">]</span>
 <span class="n">df3</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
@@ -13490,7 +13645,7 @@ Name: converted, dtype: float64</pre>
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[252]:</div>
+<div class="prompt output_prompt">Out[45]:</div>
 
 
 
@@ -13588,26 +13743,12 @@ Name: converted, dtype: float64</pre>
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>h. 虽然你现在已经查看了国家与页面在转化率上的个体性因素，但现在我们要查看页面与国家/地区之间的相互作用，测试其是否会对转化产生重大影响。创建必要的附加列，并拟合一个新的模型。</p>
-<p>提供你的摘要结果，以及根据结果得出的结论。</p>
-<p><strong>提示：页面与国家/地区的相互作用</strong></p>
-
-<pre><code>df3['new_CA'] = df3['new_page'] * df3['CA']
-df3['new_UK'] = df3['new_page'] * df3['UK']</code></pre>
-
-</div>
-</div>
-</div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[253]:</div>
+<div class="prompt input_prompt">In&nbsp;[46]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">logit_mod</span> <span class="o">=</span> <span class="n">sm</span><span class="o">.</span><span class="n">Logit</span><span class="p">(</span><span class="n">df3</span><span class="o">.</span><span class="n">converted</span><span class="p">,</span><span class="n">df3</span><span class="p">[[</span><span class="s1">&#39;intercept&#39;</span><span class="p">,</span><span class="s1">&#39;ab_page&#39;</span><span class="p">,</span><span class="s1">&#39;new_CA&#39;</span><span class="p">,</span><span class="s1">&#39;new_UK&#39;</span><span class="p">]])</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">logit_mod</span> <span class="o">=</span> <span class="n">sm</span><span class="o">.</span><span class="n">Logit</span><span class="p">(</span><span class="n">df3</span><span class="o">.</span><span class="n">converted</span><span class="p">,</span><span class="n">df3</span><span class="p">[[</span><span class="s1">&#39;intercept&#39;</span><span class="p">,</span><span class="s1">&#39;ab_page&#39;</span><span class="p">,</span><span class="s1">&#39;CA&#39;</span><span class="p">,</span><span class="s1">&#39;UK&#39;</span><span class="p">,</span><span class="s1">&#39;new_CA&#39;</span><span class="p">,</span><span class="s1">&#39;new_UK&#39;</span><span class="p">]])</span>
 <span class="n">r</span> <span class="o">=</span> <span class="n">logit_mod</span><span class="o">.</span><span class="n">fit</span><span class="p">()</span>
 <span class="n">r</span><span class="o">.</span><span class="n">summary</span><span class="p">()</span>
 </pre></div>
@@ -13635,7 +13776,7 @@ df3['new_UK'] = df3['new_page'] * df3['UK']</code></pre>
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[253]:</div>
+<div class="prompt output_prompt">Out[46]:</div>
 
 
 
@@ -13646,22 +13787,22 @@ df3['new_UK'] = df3['new_page'] * df3['UK']</code></pre>
   <th>Dep. Variable:</th>     <td>converted</td>    <th>  No. Observations:  </th>   <td>290584</td>   
 </tr>
 <tr>
-  <th>Model:</th>               <td>Logit</td>      <th>  Df Residuals:      </th>   <td>290580</td>   
+  <th>Model:</th>               <td>Logit</td>      <th>  Df Residuals:      </th>   <td>290578</td>   
 </tr>
 <tr>
-  <th>Method:</th>               <td>MLE</td>       <th>  Df Model:          </th>   <td>     3</td>   
+  <th>Method:</th>               <td>MLE</td>       <th>  Df Model:          </th>   <td>     5</td>   
 </tr>
 <tr>
-  <th>Date:</th>          <td>Thu, 24 May 2018</td> <th>  Pseudo R-squ.:     </th>  <td>3.351e-05</td> 
+  <th>Date:</th>          <td>Sat, 26 May 2018</td> <th>  Pseudo R-squ.:     </th>  <td>3.482e-05</td> 
 </tr>
 <tr>
-  <th>Time:</th>              <td>23:23:24</td>     <th>  Log-Likelihood:    </th> <td>-1.0639e+05</td>
+  <th>Time:</th>              <td>10:21:37</td>     <th>  Log-Likelihood:    </th> <td>-1.0639e+05</td>
 </tr>
 <tr>
   <th>converged:</th>           <td>True</td>       <th>  LL-Null:           </th> <td>-1.0639e+05</td>
 </tr>
 <tr>
-  <th> </th>                      <td> </td>        <th>  LLR p-value:       </th>   <td>0.06785</td>  
+  <th> </th>                      <td> </td>        <th>  LLR p-value:       </th>   <td>0.1920</td>   
 </tr>
 </table>
 <table class="simpletable">
@@ -13669,16 +13810,22 @@ df3['new_UK'] = df3['new_page'] * df3['UK']</code></pre>
       <td></td>         <th>coef</th>     <th>std err</th>      <th>z</th>      <th>P>|z|</th>  <th>[0.025</th>    <th>0.975]</th>  
 </tr>
 <tr>
-  <th>intercept</th> <td>   -1.9888</td> <td>    0.008</td> <td> -246.669</td> <td> 0.000</td> <td>   -2.005</td> <td>   -1.973</td>
+  <th>intercept</th> <td>   -1.9865</td> <td>    0.010</td> <td> -206.344</td> <td> 0.000</td> <td>   -2.005</td> <td>   -1.968</td>
 </tr>
 <tr>
-  <th>ab_page</th>   <td>   -0.0183</td> <td>    0.013</td> <td>   -1.449</td> <td> 0.147</td> <td>   -0.043</td> <td>    0.006</td>
+  <th>ab_page</th>   <td>   -0.0206</td> <td>    0.014</td> <td>   -1.505</td> <td> 0.132</td> <td>   -0.047</td> <td>    0.006</td>
 </tr>
 <tr>
-  <th>new_CA</th>    <td>   -0.0644</td> <td>    0.038</td> <td>   -1.679</td> <td> 0.093</td> <td>   -0.140</td> <td>    0.011</td>
+  <th>CA</th>        <td>   -0.0175</td> <td>    0.038</td> <td>   -0.465</td> <td> 0.642</td> <td>   -0.091</td> <td>    0.056</td>
 </tr>
 <tr>
-  <th>new_UK</th>    <td>    0.0257</td> <td>    0.019</td> <td>    1.363</td> <td> 0.173</td> <td>   -0.011</td> <td>    0.063</td>
+  <th>UK</th>        <td>   -0.0057</td> <td>    0.019</td> <td>   -0.306</td> <td> 0.760</td> <td>   -0.043</td> <td>    0.031</td>
+</tr>
+<tr>
+  <th>new_CA</th>    <td>   -0.0469</td> <td>    0.054</td> <td>   -0.872</td> <td> 0.383</td> <td>   -0.152</td> <td>    0.059</td>
+</tr>
+<tr>
+  <th>new_UK</th>    <td>    0.0314</td> <td>    0.027</td> <td>    1.181</td> <td> 0.238</td> <td>   -0.021</td> <td>    0.084</td>
 </tr>
 </table>
 </div>
@@ -13693,7 +13840,7 @@ df3['new_UK'] = df3['new_page'] * df3['UK']</code></pre>
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>根据新的逻辑回归模型，与ab_page和国家相关的p-值较大，都不具备统计性显著关系。可以得出不同国家对转化率没有影响。</p>
+<p>根据新的逻辑回归模型，与ab_page和国家相关的p-值,以及国家和地区的交互项都较大，都不具备统计性显著关系。可以得出不同国家对转化率没有影响。</p>
 
 </div>
 </div>
